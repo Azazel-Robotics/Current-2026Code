@@ -32,12 +32,14 @@ public class Robot extends TimedRobot {
     @Override
     public void robotInit() {
         SmartDashboard.putData(CommandScheduler.getInstance());
+        DriverStation.getAlliance();
     }
 
     @Override
     public void robotPeriodic() {
         m_timeAndJoystickReplay.update();
         CommandScheduler.getInstance().run(); 
+        SmartDashboard.putNumber("Match Timer", DriverStation.getMatchTime());
     }
 
     @Override
