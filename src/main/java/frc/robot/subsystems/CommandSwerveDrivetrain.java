@@ -40,13 +40,14 @@ import frc.robot.generated.TunerConstants.TunerSwerveDrivetrain;
  * https://v6.docs.ctr-electronics.com/en/stable/docs/tuner/tuner-swerve/index.html
  */
 public class CommandSwerveDrivetrain extends TunerSwerveDrivetrain implements Subsystem {
+
     private static final double kSimLoopPeriod = 0.004; // 4 ms
     private Notifier m_simNotifier = null;
     private double m_lastSimTime;
 
     //check what this line does? -AZ
-    private final Field2d field2d = new Field2d();
-    //SwerveDriveOdometry m_Odometry = new SwerveDriveOdometry(null, Rotation2d.fromDegrees())
+    //private final Field2d field2d = new Field2d();
+    //SwerveDriveOdometry m_Odometry = new SwerveDriveOdometry(null, Rotation2d.fromDegrees());
 
     /* Blue alliance sees forward as 0 degrees (toward red alliance wall) */
     private static final Rotation2d kBlueAlliancePerspectiveRotation = Rotation2d.kZero;

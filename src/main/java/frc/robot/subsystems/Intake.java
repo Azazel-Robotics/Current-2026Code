@@ -20,14 +20,14 @@ public class Intake extends SubsystemBase {
     IntakeArm passiveLimit;
 
     //---------- Class Instance Creation ----------//
-    public static final Intake intake;
+    public static final Intake instance;
 
     static {
-        intake = new Intake();
+        instance = new Intake();
     }
 
     public static Intake getInstance() {
-        return intake;
+        return instance;
     }
 
     public Intake() {

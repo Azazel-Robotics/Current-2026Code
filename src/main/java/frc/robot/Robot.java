@@ -6,19 +6,25 @@ package frc.robot;
 
 import com.ctre.phoenix6.HootAutoReplay;
 
+import edu.wpi.first.math.estimator.SwerveDrivePoseEstimator;
 import edu.wpi.first.math.util.Units;
 import edu.wpi.first.wpilibj.DriverStation;
 import edu.wpi.first.wpilibj.TimedRobot;
+import edu.wpi.first.wpilibj.smartdashboard.Field2d;
 import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 import edu.wpi.first.wpilibj2.command.Command;
 import edu.wpi.first.wpilibj2.command.CommandScheduler;
 import frc.robot.subsystems.Shooter;
 import frc.robot.subsystems.Index;
 
+
 public class Robot extends TimedRobot {
     private Command m_autonomousCommand;
 
+    private final Field2d field = new Field2d();
+
     private final RobotContainer m_robotContainer;
+
 
     /* log and replay timestamp and joystick data */
     private final HootAutoReplay m_timeAndJoystickReplay = new HootAutoReplay()
@@ -33,6 +39,7 @@ public class Robot extends TimedRobot {
     public void robotInit() {
         SmartDashboard.putData(CommandScheduler.getInstance());
         DriverStation.getAlliance();
+        SmartDashboard.putData("Game Field", field);
     }
 
     @Override
@@ -40,6 +47,8 @@ public class Robot extends TimedRobot {
         m_timeAndJoystickReplay.update();
         CommandScheduler.getInstance().run(); 
         SmartDashboard.putNumber("Match Timer", DriverStation.getMatchTime());
+        //May 6, 2026 -> will fix later; I have to implement all of the pose estimators in the commandswervedrivetrain class -AZ
+        //field.setRobotPose(m_odometry.getPo);
     }
 
     @Override
