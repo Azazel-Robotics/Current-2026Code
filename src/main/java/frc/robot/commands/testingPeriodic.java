@@ -19,6 +19,7 @@ public class testingPeriodic extends SequentialCommandGroup {
     addCommands (
 
         //--------Commands for Shooter--------//
+<<<<<<< HEAD
         new WaitCommand(2).deadlineFor(Shooter.getInstance().spinShooterMotors(.4)),
         new WaitCommand(0.1).deadlineFor(Shooter.getInstance().spinShooterZero()),
 
@@ -44,6 +45,33 @@ public class testingPeriodic extends SequentialCommandGroup {
         new WaitCommand(2).deadlineFor(testingPeriodicSwerve.getInstance().rotateCounterClockwise()),
 
         new WaitCommand(0.1).deadlineFor(testingPeriodicSwerve.getInstance().stop())
+=======
+        new WaitCommand(3).deadlineFor(Shooter.getInstance().spinShooterMotors(.65))
+            .andThen(Shooter.getInstance().spinShooterZero()),
+
+
+        //--------Commands for Index--------//
+        new WaitCommand(2).deadlineFor(Index.getInstance().spinIndex(.5))
+            .andThen(Index.getInstance().spinIndexZero()),
+    
+
+        //--------Commands for Intake and Intake Arm--------//
+        new WaitCommand(2).deadlineFor(IntakeArm.getInstance().spinArmDown(0.75)),
+        new WaitCommand(2).deadlineFor(Intake.getInstance().spinIntake(.5))
+            .andThen(Intake.getInstance().spinIntake(0)),
+        new WaitCommand(2).deadlineFor(IntakeArm.getInstance().spinArmUp(0.75)),
+
+        //--------Swerve Drive--------//
+        new WaitCommand(3).deadlineFor(testingPeriodicSwerve.getInstance().moveForward()),
+        new WaitCommand(3).deadlineFor(testingPeriodicSwerve.getInstance().moveRight()),
+        new WaitCommand(3).deadlineFor(testingPeriodicSwerve.getInstance().moveBackwards()),
+        new WaitCommand(3).deadlineFor(testingPeriodicSwerve.getInstance().moveLeft()),
+
+        new WaitCommand(3).deadlineFor(testingPeriodicSwerve.getInstance().rotateClockwise()),
+        new WaitCommand(3).deadlineFor(testingPeriodicSwerve.getInstance().rotateCounterClockwise()),
+
+        new WaitCommand(3).deadlineFor(testingPeriodicSwerve.getInstance().stop())
+>>>>>>> 5947b06 (attempt one at making a testing periodic routine)
 
 
     );
