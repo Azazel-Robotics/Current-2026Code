@@ -219,6 +219,9 @@ public class RobotContainer {
                 //intake arm up -> added control for Driver autonomy when going over Bump
                  Driver.x().onTrue(intakeArm.spinArmUp(0.4)).onFalse(intakeArm.spinArmUp(0));
 
+                //temp control for single controller testing
+                Driver.povUp().onTrue(intakeArm.spinArmDown(0.65)).onFalse(intakeArm.spinArmDown(0));
+
                 
                 //---------- Hudson Valley Regional Driver Controls ----------//
 

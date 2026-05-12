@@ -27,6 +27,9 @@ import frc.robot.generated.TunerConstants;
 public class Robot extends TimedRobot {
     private Command m_autonomousCommand;
 
+    //testing stuff for testing periodic
+    private Command m_testingPeriodicCommand;
+
     private final Field2d field = new Field2d();
 
     private final RobotContainer m_robotContainer;
@@ -137,12 +140,14 @@ public class Robot extends TimedRobot {
     @Override
     public void testInit() {
         CommandScheduler.getInstance().cancelAll();
+        m_testingPeriodicCommand = new testingPeriodic();
+        if (m_testingPeriodicCommand != null){
+            CommandScheduler.getInstance().schedule(m_testingPeriodicCommand);
+        }
     }
 
     @Override
-    public void testPeriodic() {
-        new testingPeriodic();
-    }
+    public void testPeriodic() {}
 
     @Override
     public void testExit() {
