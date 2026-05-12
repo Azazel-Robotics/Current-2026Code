@@ -147,9 +147,7 @@ public class Robot extends TimedRobot {
     }
 
     @Override
-    public void testPeriodic() {
-        new testingPeriodic();
-    }
+    public void testPeriodic() {}
 
     @Override
     public void testExit() {

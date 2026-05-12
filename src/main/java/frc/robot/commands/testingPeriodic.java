@@ -20,6 +20,7 @@ public class testingPeriodic extends SequentialCommandGroup {
 
         //--------Commands for Shooter--------//
 <<<<<<< HEAD
+<<<<<<< HEAD
         new WaitCommand(2).deadlineFor(Shooter.getInstance().spinShooterMotors(.4)),
         new WaitCommand(0.1).deadlineFor(Shooter.getInstance().spinShooterZero()),
 
@@ -48,30 +49,38 @@ public class testingPeriodic extends SequentialCommandGroup {
 =======
         new WaitCommand(3).deadlineFor(Shooter.getInstance().spinShooterMotors(.65))
             .andThen(Shooter.getInstance().spinShooterZero()),
+=======
+        new WaitCommand(2).deadlineFor(Shooter.getInstance().spinShooterMotors(.4)),
+        new WaitCommand(0.1).deadlineFor(Shooter.getInstance().spinShooterZero()),
+>>>>>>> 23268a8 (attempt two at getting the testing periodic to work)
 
 
         //--------Commands for Index--------//
-        new WaitCommand(2).deadlineFor(Index.getInstance().spinIndex(.5))
-            .andThen(Index.getInstance().spinIndexZero()),
+        new WaitCommand(2).deadlineFor(Index.getInstance().spinIndex(.3)),
+        new WaitCommand(0.1).deadlineFor(Index.getInstance().spinIndexZero()),
     
 
         //--------Commands for Intake and Intake Arm--------//
-        new WaitCommand(2).deadlineFor(IntakeArm.getInstance().spinArmDown(0.75)),
-        new WaitCommand(2).deadlineFor(Intake.getInstance().spinIntake(.5))
-            .andThen(Intake.getInstance().spinIntake(0)),
-        new WaitCommand(2).deadlineFor(IntakeArm.getInstance().spinArmUp(0.75)),
+        new WaitCommand(2).deadlineFor(IntakeArm.getInstance().spinArmDown(0.5)),
+        new WaitCommand(2).deadlineFor(Intake.getInstance().spinIntake(.2)),
+        new WaitCommand(0.1).deadlineFor(Intake.getInstance().spinIntake(0)),
+        new WaitCommand(2).deadlineFor(IntakeArm.getInstance().spinArmUp(0.5)),
 
         //--------Swerve Drive--------//
-        new WaitCommand(3).deadlineFor(testingPeriodicSwerve.getInstance().moveForward()),
-        new WaitCommand(3).deadlineFor(testingPeriodicSwerve.getInstance().moveRight()),
-        new WaitCommand(3).deadlineFor(testingPeriodicSwerve.getInstance().moveBackwards()),
-        new WaitCommand(3).deadlineFor(testingPeriodicSwerve.getInstance().moveLeft()),
+        new WaitCommand(2).deadlineFor(testingPeriodicSwerve.getInstance().moveForward()),
+        new WaitCommand(2).deadlineFor(testingPeriodicSwerve.getInstance().moveRight()),
+        new WaitCommand(2).deadlineFor(testingPeriodicSwerve.getInstance().moveBackwards()),
+        new WaitCommand(2).deadlineFor(testingPeriodicSwerve.getInstance().moveLeft()),
 
-        new WaitCommand(3).deadlineFor(testingPeriodicSwerve.getInstance().rotateClockwise()),
-        new WaitCommand(3).deadlineFor(testingPeriodicSwerve.getInstance().rotateCounterClockwise()),
+        new WaitCommand(2).deadlineFor(testingPeriodicSwerve.getInstance().rotateClockwise()),
+        new WaitCommand(2).deadlineFor(testingPeriodicSwerve.getInstance().rotateCounterClockwise()),
 
+<<<<<<< HEAD
         new WaitCommand(3).deadlineFor(testingPeriodicSwerve.getInstance().stop())
 >>>>>>> 5947b06 (attempt one at making a testing periodic routine)
+=======
+        new WaitCommand(0.1).deadlineFor(testingPeriodicSwerve.getInstance().stop())
+>>>>>>> 23268a8 (attempt two at getting the testing periodic to work)
 
 
     );
