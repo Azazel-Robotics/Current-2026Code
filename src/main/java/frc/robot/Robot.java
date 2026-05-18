@@ -8,20 +8,14 @@ import com.ctre.phoenix6.HootAutoReplay;
 
 import edu.wpi.first.math.estimator.SwerveDrivePoseEstimator;
 import edu.wpi.first.math.util.Units;
-import edu.wpi.first.util.sendable.Sendable;
-import edu.wpi.first.util.sendable.SendableBuilder;
 import edu.wpi.first.wpilibj.DriverStation;
 import edu.wpi.first.wpilibj.TimedRobot;
 import edu.wpi.first.wpilibj.smartdashboard.Field2d;
 import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
-import edu.wpi.first.wpilibj.smartdashboard.SendableBuilderImpl;
 import edu.wpi.first.wpilibj2.command.Command;
 import edu.wpi.first.wpilibj2.command.CommandScheduler;
 import frc.robot.subsystems.Shooter;
-//import frc.robot.subsystems.CommandSwerveDrivetrain;
 import frc.robot.subsystems.Index;
-import frc.robot.commands.testingPeriodic;
-import frc.robot.generated.TunerConstants;
 
 
 public class Robot extends TimedRobot {
@@ -58,27 +52,7 @@ public class Robot extends TimedRobot {
         SmartDashboard.putNumber("Match Timer", DriverStation.getMatchTime());
         //May 6, 2026 -> will fix later; I have to implement all of the pose estimators in the commandswervedrivetrain class -AZ
         //field.setRobotPose(m_odometry.getPo);
-//         SmartDashboard.putData("Swerve Drive", new Sendable() {
-//   @Override
-//   public void initSendable(SendableBuilder builder) {
-//     builder.setSmartDashboardType("SwerveDrive");
-
-//     builder.addDoubleProperty("Front Left Angle", () -> drivetrain.getAngle().getRadians(), null);
-//     builder.addDoubleProperty("Front Left Velocity", () -> frontLeftModule.getVelocity(), null);
-
-//     builder.addDoubleProperty("Front Right Angle", () -> FrontRight.getAngle().getRadians(), null);
-//     builder.addDoubleProperty("Front Right Velocity", () -> frontRightModule.getVelocity(), null);
-
-//     builder.addDoubleProperty("Back Left Angle", () -> BackLeft.getAngle().getRadians(), null);
-//     builder.addDoubleProperty("Back Left Velocity", () -> backLeftModule.getVelocity(), null);
-
-//     builder.addDoubleProperty("Back Right Angle", () -> BackRight.getAngle().getRadians(), null);
-//     builder.addDoubleProperty("Back Right Velocity", () -> backRightModule.getVelocity(), null);
-
-//     builder.addDoubleProperty("Robot Angle", () -> getRotation().getRadians(), null);
-//   }
-}//);
-    //}
+    }
 
     @Override
     public void disabledInit() {
@@ -146,9 +120,7 @@ public class Robot extends TimedRobot {
     public void testPeriodic() {}
 
     @Override
-    public void testExit() {
-        CommandScheduler.getInstance().cancelAll();
-    }
+    public void testExit() {}
 
     @Override
     public void simulationInit() {
