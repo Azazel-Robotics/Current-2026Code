@@ -44,16 +44,6 @@ import frc.robot.subsystems.Shooter;
 
 public class RobotContainer {
 
-        public static final RobotContainer instance;
-
-        static{
-                instance = new RobotContainer();
-        }
-
-        public static RobotContainer getInstance(){
-                return instance;
-        }
-
         // SWERVE STUFF
         private double MaxSpeed = 0.75 * TunerConstants.kSpeedAt12Volts.in(MetersPerSecond); // kSpeedAt12Volts desired
                                                                                              // top
@@ -70,15 +60,6 @@ public class RobotContainer {
         private final SwerveRequest.PointWheelsAt point = new SwerveRequest.PointWheelsAt();
         private final Telemetry logger = new Telemetry(MaxSpeed);
         public final CommandSwerveDrivetrain m_robotDrive = TunerConstants.createDrivetrain();
-
-        //TESTING OUT RANDOM CRAP 5/11/2026
-        public CommandSwerveDrivetrain getDriveTrain(){
-                return m_robotDrive;
-        }
-
-        public SwerveRequest.FieldCentric getSwerveCentric() {
-                return drive;
-        }
 
         private final CommandXboxController Driver = new CommandXboxController(0);
         private final CommandXboxController Operator = new CommandXboxController(1);

@@ -24,7 +24,6 @@ import edu.wpi.first.wpilibj.util.Color;
 import edu.wpi.first.wpilibj.util.Color8Bit;
 
 public class Telemetry {
-
     private final double MaxSpeed;
 
     /**
