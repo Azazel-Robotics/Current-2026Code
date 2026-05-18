@@ -114,10 +114,6 @@ public class Robot extends TimedRobot {
     @Override
     public void testInit() {
         CommandScheduler.getInstance().cancelAll();
-        m_testingPeriodicCommand = new testingPeriodic();
-        if (m_testingPeriodicCommand != null){
-            CommandScheduler.getInstance().schedule(m_testingPeriodicCommand);
-        }
     }
 
     @Override
